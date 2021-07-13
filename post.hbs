@@ -5,8 +5,8 @@
 
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
-<link rel="stylesheet" href="/assets/css/prism.css">
-<script src="/assets/js/prism.js"></script>
+<link rel="stylesheet" href="{{ asset css/prism.css }}">
+<script src="{{ asset js/prims.js }}"></script>
 
 {{> "header"}}
 
@@ -26,7 +26,7 @@
             <h1 class="post-title">{{title}}</h1>
             <section class="post-meta">
                 <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-                <span class="author">by {{author}}</span>
+                <span class="author">by {{primary_author}}</span>
             </section>
         </header>
 
@@ -37,7 +37,7 @@
         <footer class="post-footer">
 
         {{! Everything inside the #author tags pulls data from the author }}
-        {{#author}}
+        {{#primary_author}}
 
             {{#if profile_image}}
             <figure class="author-image">
@@ -59,7 +59,7 @@
                 </div>
             </section>
 
-        {{/author}}
+        {{/primary_author}}
 
             <section class="share">
                 <h4>Share this post</h4>

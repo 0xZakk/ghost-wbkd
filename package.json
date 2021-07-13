@@ -1,4 +1,29 @@
 {
   "name": "webkid",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "description": "A [ghost](https://ghost.org/)/[journey](https://github.com/kabukky/journey) theme.",
+  "author": {
+    "email": "zachary.fleischmann@gmail.com"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZakkMan/ghost-wbkd.git"
+  },
+  "keywords": ["ghost-theme"],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZakkMan/ghost-wbkd/issues"
+  },
+  "homepage": "https://github.com/ZakkMan/ghost-wbkd#readme",
+  "config": {
+    "posts_per_page": 10
+  },
+  "engines": {
+    "ghost": ">=4.0.0",
+    "ghost-api": "v4"
+  }
 }
