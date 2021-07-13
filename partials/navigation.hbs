@@ -1,7 +1,17 @@
-<ul id="taglist" class="taglist">
-    {{#foreach navigation}}
-    <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation">
-      <a href="{{url absolute="true"}}">{{label}}</a>
-    </li>
-    {{/foreach}}
-</ul>
+{{#if isSecondary}}
+  <ul id="taglist" class="taglist">
+      {{#foreach navigation}}
+        <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation">
+          <a href="{{url absolute="true"}}">{{label}}</a>
+        </li>
+      {{/foreach}}
+  </ul>
+{{else}}
+  <ul id="taglist" class="taglist">
+      {{#foreach navigation}}
+        <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation">
+          <a href="{{url absolute="true"}}">{{label}}</a>
+        </li>
+      {{/foreach}}
+  </ul>
+{{/if}}

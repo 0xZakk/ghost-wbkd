@@ -26,7 +26,7 @@
             <h1 class="post-title">{{title}}</h1>
             <section class="post-meta">
                 <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-                <span class="author">by {{primary_author}}</span>
+                <span class="author">by {{primary_author.name}}</span>
             </section>
         </header>
 
@@ -54,8 +54,7 @@
                     <p>Read <a href="{{url}}">more posts</a> by this author.</p>
                 {{/if}}
                 <div class="author-meta">
-                    {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
-                    {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
+                    {{#if twitter}}<a href="{{twitter_url}}" target="_blank" ref="nofollower">Follow {{name}} on Twitter</a>{{/if}}
                 </div>
             </section>
 
@@ -79,25 +78,15 @@
 
         </footer>
 
+        <section class="pagination">
+            {{#prev_post}}
+                <a href="{{url}}" class="older-posts">{{title}}</a>
+            {{/prev_post}}
 
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'example'; // required: replace example with your forum shortname
-    var disqus_identifier = '{{post.id}}';
- 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-
+            {{#next_post}}
+                <a href="{{url}}" class="newer-posts">{{title}}</a>
+            {{/next_post}}
+        </section>
     </article>
 
 </div>
